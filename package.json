@@ -2,9 +2,10 @@
   "name": "gulp-boilerplate",
   "version": "1.0.0",
   "description": "Frontend boilerplate based on gulp",
+  "homepage": "https://prokesha.github.io/bike-store-landing/",
   "scripts": {
     "init": "mate-scripts init",
-    "start": "mate-scripts start",
+    "start": "node scripts/start-dev-server.js",
     "lint": "mate-scripts lint",
     "test:only": "mate-scripts test",
     "build": "mate-scripts build",
@@ -33,6 +34,11 @@
   "browserslist": [
     "last 2 versions"
   ],
+  "targets": {
+    "default": {
+      "publicUrl": "/bike-store-landing/"
+    }
+  },
   "mateAcademy": {
     "projectType": "layout",
     "linters": {
