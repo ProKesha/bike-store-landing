@@ -13,3 +13,7 @@ backstop_data
 dist
 .cache
 .parcel-cache
+.parcel-dev-dist/
+.parcel-dev-dist/
+temp-dist/
+temp-dist-2/

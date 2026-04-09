@@ -8,8 +8,8 @@
     "start": "node scripts/start-dev-server.js",
     "lint": "mate-scripts lint",
     "test:only": "mate-scripts test",
-    "build": "mate-scripts build",
-    "deploy": "mate-scripts deploy",
+    "build": "parcel build src/index.html --dist-dir dist --public-url /bike-store-landing/",
+    "deploy": "npm run build && gh-pages -d dist",
     "update": "mate-scripts update",
     "postinstall": "npm run update",
     "test": "npm run lint && npm run test:only"
@@ -26,6 +26,7 @@
     "@parcel/transformer-sass": "^2.12.0",
     "eslint": "^8.57.0",
     "eslint-plugin-node": "^11.1.0",
+    "gh-pages": "^6.3.0",
     "parcel": "^2.12.0",
     "prettier": "^3.3.2",
     "stylelint": "^16.7.0",
@@ -34,11 +35,6 @@
   "browserslist": [
     "last 2 versions"
   ],
-  "targets": {
-    "default": {
-      "publicUrl": "/bike-store-landing/"
-    }
-  },
   "mateAcademy": {
     "projectType": "layout",
     "linters": {

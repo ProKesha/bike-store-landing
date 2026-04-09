@@ -1,6 +1,14 @@
 const { spawn } = require('child_process');
 
-const parcelArgs = ['parcel', 'serve', 'src/index.html', '--dist-dir', 'dist'];
+const parcelArgs = [
+  'parcel',
+  'serve',
+  'src/index.html',
+  '--dist-dir',
+  '.parcel-dev-dist',
+  '--public-url',
+  '/',
+];
 
 const parcel = spawn('npx', parcelArgs, {
   stdio: ['inherit', 'pipe', 'pipe'],
@@ -62,4 +70,3 @@ forwardOutput(parcel.stderr, process.stderr);
 parcel.on('close', code => {
   process.exit(code ?? 0);
 });
-
