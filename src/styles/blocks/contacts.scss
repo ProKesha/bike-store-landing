@@ -90,10 +90,13 @@
     cursor: pointer;
     box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 
+    transition:
+      box-shadow $effect-duration $effect-easing,
+      transform $effect-duration $effect-easing;
 
-    @include hover(box-shadow, 0 4px 40px rgba(255, 255, 255, 0.4));
-
-
+    &:hover {
+      box-shadow: 0 4px 40px rgba(255, 255, 255, 0.4);
+    }
   }
 
   &__info {
@@ -127,20 +130,25 @@
   }
 
   &__value {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.4;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 4px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 4px;
 
-  @include hover(color, #fff);
+    transition:
+      opacity $effect-duration $effect-easing,
+      transform $effect-duration $effect-easing;
 
-  &:focus,
-  &:active {
-    outline: none;
+    &:hover {
+      opacity: 0.8;
+    }
 
+    &:focus,
+    &:active {
+      outline: none;
+    }
   }
-}
 }

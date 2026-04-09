@@ -34,10 +34,9 @@
 
 // Ховер
 @mixin hover($property, $toValue) {
-  transition: #{$property} $effectDuration;
+  transition: #{$property} $effect-duration $effect-easing;
 
   &:hover {
     #{$property}: $toValue;
   }
 }
-

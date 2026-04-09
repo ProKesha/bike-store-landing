@@ -129,7 +129,7 @@
     height: 100%;
     border-radius: 8px;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform $effect-duration $effect-easing;
 
     &:hover {
       transform: scale(1.02);
@@ -188,9 +188,11 @@
     border: none;
     border-radius: 40px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition:
+      background-color $effect-duration $effect-easing,
+      box-shadow $effect-duration $effect-easing,
+      transform $effect-duration $effect-easing;
     position: relative;
-
 
     // Mobile стилі (320px)
     padding: 30px 34px;
@@ -219,10 +221,7 @@
 
     &:hover {
       background-color: #f0f0f0;
-
-
-
-      @include hover(box-shadow, 0 4px 40px rgba(255, 255, 255, 0.4));
+      box-shadow: 0 4px 40px rgba(255, 255, 255, 0.4);
     }
 
     &:active {
@@ -237,4 +236,3 @@
     // }
   }
 }
-

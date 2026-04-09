@@ -10,7 +10,16 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+    <meta
+      name="description"
+      content="MyBike landing page with bike comparison, feature details, and contact form."
+    />
     <title>MyBike</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/Logo.png"
+    />
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
@@ -19,6 +28,11 @@
       rel="preconnect"
       href="https://fonts.gstatic.com"
       crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="images/header-bg-mobile2.png"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
@@ -48,22 +62,27 @@
             <a
               href="#"
               class="top-bar__logo-link"
+              aria-label="Go to homepage"
             >
               <img
                 src="images/Logo-2x.png"
                 alt="Bike logo"
                 class="top-bar__logo"
+                width="187"
+                height="56"
               />
             </a>
 
             <div class="top-bar__icons">
               <a
-                href="#"
+                href="tel:+123455555555"
                 class="icon icon--phone"
+                aria-label="Call MyBike"
               ></a>
               <a
                 href="#menu"
                 class="icon icon--menu"
+                aria-label="Open navigation menu"
               ></a>
             </div>
           </div>
@@ -85,17 +104,21 @@
           <a
             href="#"
             class="top-bar__logo-link"
+            aria-label="Go to homepage"
           >
             <img
               src="images/Logo2-2x.png"
               alt="Bike logo"
               class="top-bar__logo"
+              width="187"
+              height="56"
             />
           </a>
 
           <a
             href="#"
             class="icon icon--close"
+            aria-label="Close navigation menu"
           ></a>
         </div>
 
@@ -188,6 +211,8 @@
                   src="images/products/sporty-4.png"
                   alt="sporty 4"
                   class="product__photo"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <h3 class="product__title">Sporty 4</h3>
                 <p class="product__description">
@@ -201,6 +226,8 @@
                   src="images/products/ ride-in-town-ST.png"
                   alt="ride in town ST"
                   class="product__photo"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <h3 class="product__title">Ride in town ST</h3>
                 <p class="product__description">
@@ -214,6 +241,8 @@
                   src="images/products/agile-ride-3.png"
                   alt="agile ride 3"
                   class="product__photo"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <h3 class="product__title">Agile ride 3</h3>
                 <p class="product__description">
@@ -246,6 +275,8 @@
                         src="images/details/auto-unlock-mobi.png"
                         alt="Auto unlock feature"
                         class="details__photo"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </picture>
 
@@ -258,6 +289,8 @@
                         src="images/details/auto-unlock-mobi2.png"
                         alt="Auto unlock close-up"
                         class="details__photo"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </picture>
                   </div>
@@ -280,8 +313,10 @@
                       />
                       <img
                         src="images/details/lights-mobi.png"
-                        alt="Auto unlock feature"
+                        alt="Integrated lights feature"
                         class="details__photo"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </picture>
 
@@ -292,8 +327,10 @@
                       />
                       <img
                         src="images/details/lights-mobi2.png"
-                        alt="Auto unlock close-up"
+                        alt="Integrated lights close-up"
                         class="details__photo"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </picture>
                   </div>
@@ -318,8 +355,10 @@
                       />
                       <img
                         src="images/details/breaks-mobi.png"
-                        alt="Auto unlock feature"
+                        alt="Hydraulic disc brakes feature"
                         class="details__photo"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </picture>
 
@@ -330,8 +369,10 @@
                       />
                       <img
                         src="images/details/breaks-mobi2.png"
-                        alt="Auto unlock close-up"
+                        alt="Hydraulic disc brakes close-up"
                         class="details__photo"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </picture>
                   </div>
@@ -361,28 +402,41 @@
             <h2 class="section-title">Contact us</h2>
 
             <div class="contacts__wrapper">
-              <form class="contacts__form" onsubmit="this.reset(); return false;">
+              <!-- GET is used here because this static layout does not have a backend endpoint for POST submissions. -->
+              <form
+                class="contacts__form"
+                action="#contacts"
+                method="get"
+              >
                 <input
                   type="text"
                   class="contacts__input"
                   placeholder="John Doe"
+                  name="name"
+                  autocomplete="name"
                   required
                 />
                 <input
                   type="email"
                   class="contacts__input"
                   placeholder="example@mail.com"
+                  name="email"
+                  autocomplete="email"
                   required
                 />
                 <input
                   type="tel"
                   class="contacts__input"
                   placeholder="+1 234 567 890"
+                  name="phone"
+                  autocomplete="tel"
+                  pattern="[\+]?[0-9\s\-()]{7,}"
                   required
                 />
                 <textarea
                   class="contacts__textarea"
                   placeholder="Your message here..."
+                  name="message"
                   required
                 ></textarea>
                 <button
@@ -447,6 +501,8 @@
             src="images/footer/footer-mobi2.png"
             alt="Footer image"
             class="footer__image"
+            loading="lazy"
+            decoding="async"
           />
         </picture>
       </div>

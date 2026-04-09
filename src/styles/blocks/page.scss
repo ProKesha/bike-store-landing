@@ -5,12 +5,13 @@
   background-color: #1d1d1d;
   color: #fff;
 
-
   scroll-behavior: smooth;
 
   &__body {
     margin: 0;
     min-width: 320px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
 
   &__menu {
@@ -19,9 +20,10 @@
     right: 0;
     left: 0;
 
-    transition: all 0.3s;
+    transition:
+      transform $effect-duration $effect-easing,
+      opacity $effect-duration $effect-easing;
     opacity: 0;
-
     transform: translateX(-100%);
     pointer-events: none;
 
@@ -30,5 +32,19 @@
       transform: translateX(0);
       pointer-events: all;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
