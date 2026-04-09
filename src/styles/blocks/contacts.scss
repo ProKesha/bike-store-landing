@@ -1,0 +1,146 @@
+.contacts {
+  padding-block: 64px;
+  background-color: #1d1d1d;
+
+  @include content-padding-inline;
+
+
+  .section-title {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 52px;
+    line-height: 32px;
+    margin-bottom: 1px;
+    letter-spacing: -1.5px;
+    text-align: center;
+    color: #fff;
+  }
+
+
+
+
+
+
+
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 48px auto 0;
+
+    @include on-tablet {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+     @include on-desktop {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 200px;
+    }
+
+
+  }
+
+  &__form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__input,
+  &__textarea {
+    background-color: #f8f8fa;
+    border: none;
+    padding: 20px 24px;
+    border-radius: 9999px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000;
+    outline: none;
+
+    &::placeholder {
+      color: #999;
+    }
+
+
+  }
+
+  &__textarea {
+    resize: none;
+    height: 140px;
+    border-radius: 24px;
+  }
+
+  &__button {
+    background-color: #fff;
+    border: none;
+    padding: 20px 24px;
+    border-radius: 9999px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+
+
+    @include hover(box-shadow, 0 4px 40px rgba(255, 255, 255, 0.4));
+
+
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 0;
+
+    @include on-tablet {
+      margin-top: 0;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+
+    transition: transform 0.3s ease;
+
+    @include hover(transform, translateX(4px));
+  }
+
+  &__label {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  &__value {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 4px;
+
+  @include hover(color, #fff);
+
+  &:focus,
+  &:active {
+    outline: none;
+
+  }
+}
+}

@@ -1,0 +1,66 @@
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  color: #fff;
+  width: 100%;
+
+  background: {
+    image: url(../images/header-bg-mobile2.png);
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+
+  @include on-tablet {
+    background-image: url(../images/header-bg-tablet2.png);
+  }
+
+  @include on-desktop {
+    background-image: url(../images/header-bg-desktop2.png);
+  }
+
+  &__title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -1.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: clamp(32px, 6vw, 122px);
+    z-index: 3;
+    white-space: nowrap;
+  }
+
+  @include on-mobile {
+    &__title {
+      font-size: 36px;
+      width: 100%;
+      bottom: 15%;
+
+
+
+
+    }
+  }
+
+  @include on-tablet {
+    &__title {
+      font-size: 64px;
+      bottom: 18%;
+    }
+  }
+
+  @include on-desktop {
+    &__title {
+      font-size: 80px;
+      bottom: 28%;
+    }
+  }
+}

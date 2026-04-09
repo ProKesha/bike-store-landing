@@ -1,0 +1,45 @@
+.comparebikes {
+  background-color: #1d1d1d;
+
+  @include content-padding-inline;
+
+
+
+    .product__title,
+    .product__price {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0;
+
+  }
+
+  .product__description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0;
+  }
+
+  &__products {
+    display: grid;
+    row-gap: 40px;
+
+
+
+    @include on-tablet {
+      justify-items: center;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 24px;
+      justify-items: stretch;
+      flex-direction: row;
+    }
+  }
+}
+
+
+
+

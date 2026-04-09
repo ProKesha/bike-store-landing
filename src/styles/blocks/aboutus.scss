@@ -1,0 +1,65 @@
+.aboutus {
+  background-color: #1d1d1d;
+  color: #fff;
+  padding: 60px 20px;
+
+  &__content {
+    display: grid;
+    gap: 20px;
+  }
+
+
+
+  .aboutus__title {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 100%;
+
+  }
+
+  .aboutus__text {
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 140%;
+    margin: 0;
+  }
+
+  @include on-tablet {
+    &__content {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      
+    }
+
+    &__title {
+      font-size: 48px;
+      text-align: left;
+    }
+
+    &__text {
+      max-width: 500px;
+      max-height: calc(1.5em * 6);
+      overflow: hidden;
+    }
+  }
+
+  @include on-desktop {
+    &__content {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    &__title {
+      font-size: 72px;
+    }
+
+    &__text {
+      max-width: 1200px;
+    }
+  }
+
+
+
+}

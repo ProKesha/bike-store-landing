@@ -1,0 +1,43 @@
+
+@mixin on-mobile {
+  @media (max-width: $mobile-max-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    @content;
+  }
+}
+    
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+//  Контейнер з внутрішніми відступами
+@mixin content-padding-inline {
+  padding-inline: $section-padding-inline-mobile;
+
+  @include on-tablet {
+    padding-inline: $section-padding-inline-tablet;
+  }
+
+  @include on-desktop {
+    padding-inline: $section-padding-inline-desktop;
+    max-width: 1260px;
+    margin-inline: auto;
+  }
+}
+
+// Ховер
+@mixin hover($property, $toValue) {
+  transition: #{$property} $effectDuration;
+
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
